@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reactive Example</title>
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="text/javascript" src="../../reactive.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="name">
+      <input type="text" r-model="name" class="name__input" placeholder=" " />
+      <label class="name__label">Enter your name</label>
+    </div>
+
+    <div class="container__separator"></div>
+
+    <div class="container--word-wrap">
+      <p>
+        <span r-if="name">Hello </span><strong r-data="name"></strong><span r-if="name">, how are you?</span>
+      </p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const App = new Reactive();
+  </script>
+</body>
+</html>
